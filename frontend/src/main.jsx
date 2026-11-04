@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { Plane, MapPin, CalendarDays, Wallet, Sparkles, Bookmark, Compass, Clock3, Users, RefreshCw, CheckCircle2, ArrowRight, Heart, Utensils, Bus, Hotel, Sun, Menu } from 'lucide-react';
 import './style.css';
 
-const API = 'http://127.0.0.1:8000';
+const API = 'https://travel-itinerary-planner-d30c.onrender.com';
 const interestOptions = ['Sightseeing', 'Food', 'Nature', 'Culture', 'Adventure', 'Shopping', 'Relaxation'];
 const money = (value, currency = 'INR') => new Intl.NumberFormat('en-IN', { style: 'currency', currency, maximumFractionDigits: 0 }).format(Number(value || 0));
 
@@ -64,7 +64,7 @@ function App() {
   const total = trip?.budget_breakdown?.total_estimate ?? form.budget;
   return <div className="app-shell">
     <aside className="sidebar">
-      <div className="brand"><div className="brand-icon"><Plane size={21}/></div><div><strong>Travel Itinerary Planner</strong><small>AI TRAVEL STUDIO</small></div></div>
+      <div className="brand"><div className="brand-icon"><Plane size={21}/></div><div><strong>Travel Itinerary Planner</strong><small> TRAVEL STUDIO</small></div></div>
       <div className="workspace-label">WORKSPACE</div>
       <button className={`nav-item ${activeTab === 'planner' ? 'active' : ''}`} onClick={() => setActiveTab('planner')}><Compass size={18}/> Trip planner</button>
       <button className={`nav-item ${activeTab === 'saved' ? 'active' : ''}`} onClick={() => { setActiveTab('saved'); loadTrips(); }}><Bookmark size={18}/> Saved trips <span className="nav-count">{savedTrips.length}</span></button>
